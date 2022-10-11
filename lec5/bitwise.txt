@@ -1,0 +1,26 @@
+Bitwise operator:-
+and - &
+or - |
+xor - ^
+not - ~
+
+
+
+these operators work on bit level.
+ex - a=3, b=5;
+=> a=011 , b =101
+a&b =>  011
+	101
+	001.=> 1.
+
+
+
+not - ~
+a=2 => 10. and since integer is 32 bits. => a= 0000000000000(30times)10.
+~a= 11111111111(30times)01.
+cout <<~a; => 1. it's a signed bit number with a 1 at the begining. therefore a negative number. 
+2. find 1's complement and add 1 in it to find the 2's complement.
+
+cout << ~a = -3.
+
+
