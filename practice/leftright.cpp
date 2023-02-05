@@ -3,44 +3,23 @@
 #include <iostream>
 using namespace std;
 
-int right(int *arr, int s, int e, int key) {
-  int mid = s + (e - s) / 2;
-  int i = 0;
-  while (s <= e) {
-    if (arr[mid] == key) {
-      i = mid;
-      s = mid + 1;
-    } else if (arr[mid] > key) {
+void leftoccur(int *arr, int s, int e, int key) {
+  int mid = s + ((e - s) / 2);
+  while (s < e) {
+    if (arr[mid] == key && arr[mid - 1] < key) {
+      cout << mid;
+      return;
+    } else if (arr[mid - 1] >= key) {
       e = mid - 1;
-    } else {
-      s = mid + 1;
-    }
-    mid = s + (e - s) / 2;
-  }
-  return i;
-}
-
-int left(int *arr, int s, int e, int key) {
-  int mid = s + (e - s) / 2;
-  int i = 0;
-  while (s <= e) {
-    if (arr[mid] == key) {
-      i = mid;
-      e = mid - 1;
-    } else if (arr[mid] > key) {
-      e = mid - 1;
-    } else {
+    } else if (arr[mid] < key) {
       s = mid + 1;
     }
     mid = s + (e - s) / 2;
   }
-  return mid;
+  cout << s;
 }
 
 int main() {
-  int a[] = {1, 2, 2, 3, 3, 3};
-  int leftans = left(a, 0, 5, 2);
-  cout << leftans << endl;
-  int rightans = right(a, 0, 5, 2);
-  cout << rightans << endl;
+  int a[] = {1, 1, 2, 3, 3, 3, 3, 4, 4};
+  leftoccur(a, 0, 8, 4);
 }
