@@ -5,14 +5,16 @@ using namespace std;
 
 void solve(stack<int> s, int size, int count) {
   // base case
-
-  if (count == size) {
-    cout << "the size is " << size << endl;
-    cout << "the top element is " << s.top() << endl;
+  if (count == size / 2) {
+    s.pop();
     return;
   }
+  int num = s.top();
   s.pop();
-  solve(s, size, count++);
+
+  // recursive call
+  solve(s, size, count + 1);
+  s.push(num);
 }
 
 int main() {

@@ -2,16 +2,14 @@
 #include <stack>
 using namespace std;
 int main() {
-  string str = "sarabjot";
   stack<char> s;
+  string str = "sarabjot";
   for (int i = 0; i < str.length(); i++) {
-    s.push(str[i]);
+    char ch = str[i];
+    s.push(ch);
   }
-  string ans = "";
   while (!s.empty()) {
-    char ch = s.top();
-    ans.push_back(ch);
+    cout << s.top();
     s.pop();
   }
-  cout << "answer is " << ans << endl;
 }
