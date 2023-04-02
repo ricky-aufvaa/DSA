@@ -7,6 +7,9 @@ int main() {
   // pushing into the stack
   s.push(23);
   s.push(45);
+  cout << s.top() << endl;
+  cout << "size of stack is " << s.size() << endl;
+
   // popping
   s.pop();
   cout << s.top() << endl;
