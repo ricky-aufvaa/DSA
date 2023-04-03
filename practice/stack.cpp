@@ -10,46 +10,49 @@ public:
 
   stack(int size) {
     this->size = size;
-    top = -1;
     arr = new int[size];
+    top = -1;
   }
 
-  void push(int element) {
-    if (isEmpty()) {
+  void push(int data) {
+    if (size - top > 1) {
       top++;
-      arr[top] = element;
+      arr[top] = data;
     } else {
-      cout << "stack overflow";
+      cout << "stack overflow" << endl;
+    }
+  }
+
+  void peek() {
+    if (isEmpty()) {
+      cout << "stack is empty" << endl;
+    } else {
+      cout << arr[top];
     }
   }
 
   bool isEmpty() {
     if (top == -1) {
       return true;
-    } else
+    } else {
       return false;
+    }
   }
 
   void pop() {
     if (isEmpty()) {
-      cout << "stack underflow";
+      cout << "stack underflow" << endl;
     } else {
       top--;
-    }
-  }
-
-  void peek() {
-    if (isEmpty()) {
-      cout << "stack is empty";
-    } else {
-      cout << arr[top];
     }
   }
 };
 
 int main() {
-  stack st1(5);
-  st1.push(23);
-  st1.push(466);
-  st1.peek();
+  stack st(5);
+  // st.push(43);
+  // st.push(90);
+  st.peek();
+  st.pop();
+  st.peek();
 }
